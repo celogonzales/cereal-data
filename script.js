@@ -1,7 +1,7 @@
 // Set up dimensions and margins
-const margin = { top: 40, right: 30, bottom: 60, left: 60 },
+const margin = { top: -100, right: 30, bottom: 60, left: 60 },
     width = 800 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 
 const colorScale = d3.scaleOrdinal()
     .domain(["A", "G", "K", "N", "P", "Q", "R"])
@@ -88,32 +88,37 @@ d3.csv("data/cleaned_cereal.csv").then(data => {
     const legendData = colorScale.domain();
 
     const legend = d3.select("#scatterplot-legend")
-        .append("div")
-        .style("display", "flex")
-        .style("gap", "1rem")
-        .style("flex-wrap", "wrap");
+  .append("div")
+  .attr("id", "cereal-legend")  // optional: add ID to avoid double-append
+  .style("display", "flex")
+  .style("gap", "1rem")
+  .style("flex-wrap", "wrap");
 
-    legend.selectAll("div")
-        .data(legendData)
-        .enter()
-        .append("div")
-        .style("display", "flex")
-        .style("align-items", "center")
-        .html(d => {
-            const labelMap = {
-                A: "American Home Food",
-                G: "General Mills",
-                K: "Kellogg’s",
-                N: "Nabisco",
-                P: "Post",
-                Q: "Quaker Oats",
-                R: "Ralston Purina"
-            };
-            return `
+// Clear any previous entries
+legend.selectAll("*").remove();
+
+legend.selectAll("div")
+  .data(legendData)
+  .enter()
+  .append("div")
+  .style("display", "flex")
+  .style("align-items", "center")
+  .html(d => {
+    const labelMap = {
+      A: "American Home Food",
+      G: "General Mills",
+      K: "Kellogg’s",
+      N: "Nabisco",
+      P: "Post",
+      Q: "Quaker Oats",
+      R: "Ralston Purina"
+    };
+    return `
       <span style="display:inline-block; width: 16px; height: 16px; background:${colorScale(d)}; margin-right: 6px; border-radius: 3px;"></span>
-      ${labelMap[d]}
+      <span style="font-size: 0.8rem;">${labelMap[d]}</span>
     `;
-        });
+  });
+
 
 
     // TOP 10 BAR CHART
@@ -166,8 +171,8 @@ d3.csv("data/cleaned_cereal.csv").then(data => {
         .attr("y", d => yBar(d.name))
         .attr("height", yBar.bandwidth())
         .attr("x", 10)
-          .attr("rx", 4)
-  .attr("ry", 4)
+        .attr("rx", 4)
+        .attr("ry", 4)
         .attr("width", d => xBar(d.rating))
         .attr("fill", d => d.sugar_per_cup == 0 ? "#88D8B0" : {
             "100% Bran": "#F2A6B3",
