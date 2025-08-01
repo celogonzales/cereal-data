@@ -137,6 +137,7 @@ input[type="range"] {
 
 input[type=range] {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 8px;
   background: #A5E4E0; /* light teal or replace with your bar color */
@@ -215,6 +216,7 @@ input[type=range]::-moz-range-thumb {
   width: 380px !important;         /* match the pastel bar length */
   pointer-events: auto; /* re-enable interaction */
   -webkit-appearance: none;
+  appearance: none;
   background: none;
 }
 
