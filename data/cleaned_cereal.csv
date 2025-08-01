@@ -1,4 +1,4 @@
-﻿name,mfr,rating,sugar_per_cup,calories_per_cup,protein_per_cup,fat_per_cup,fiber_per_cup,sodium_per_cup,carbo_per_cup,potass_per_cup,image_url
+﻿name,mfr,rating,sugar_per_cup,calories_per_cup,protein_per_cup,fat_per_cup,fiber_per_cup,sodium_mg_per_cup,carbo_per_cup,potassium_mg_per_cup,image_url
 100% Bran,N,68.402973,18.18,212.12,12.12,3.03,30.3,393.94,15.15,848.48,https://i.ebayimg.com/images/g/mH0AAOSwLjFlkyUW/s-l400.jpg
 100% Natural Bran,Q,33.983679,8,120,3,5,2,15,8,135,https://images.freshop.ncrcloud.com/00043000180327/7ce8f02da3250c1b0b9d55e4dc69b152_large.png
 All-Bran,K,59.425505,15.15,212.12,12.12,3.03,27.27,787.88,21.21,969.7,"https://m.media-amazon.com/images/I/71FD7KEY33L._UF1000,1000_QL80_.jpg"
