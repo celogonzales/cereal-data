@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Super Bowl</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="hero-title">
+  <div class="hero-text">
+    <h1>The Super Bowl</h1>
+  </div>
+  <img src="assets/hero-bowl.svg" alt="Cereal bowl illustration" class="hero-icon" />
+</div>
+
+
+    
+    <div class="centered-paragraph">
+        
+       
+        <p>According to Market.us, the average American consumes 160 bowls of cereal each year, totalling a staggering 2.7 billion boxes per year, or 85 boxes sold every second.
+</p>
+<p>Below you’ll find the 80 most popular cereals sold in the US, as well as its nutritional value and rating by Consumer Reports. </p>
+        <div id="scatterplot" class="chart-section">
+            <div id="scatterplot-legend" class="legend">
+
+                <h2>Part 1: Sugar vs. Rating</h2>
+                <div class="chart"></div>
+            </div>
+
+            <div id="top10" class="chart-section">
+                <h2>Part 2: Top 10 Cereals</h2>
+
+                <div class="centered-paragraph">
+                    <p>
+                        Which cereals scored highest? Here are the top 10, rated by Consumer Reports.
+                        <span class="bold-green">Green bars</span> represent cereals with 0g of sugar. <strong>7 out the
+                            10 top rated cereals have 0g of sugar!</strong>
+                    </p>
+                </div>
+
+                <div class="chart"></div>
+            </div>
+
+<div id="builder" class="chart-section">
+  <h2>Part 3: Build Your Bowl</h2>
+  <div class="centered-paragraph">
+    <p>Tell us what you care about most, and we’ll suggest the cereal that best fits you.</p>
+  </div>
+
+  <div id="cereal-controls">
+    <label for="sugar-slider">Sugar Preference</label>
+    <input type="range" id="sugar-slider" min="0" max="10" value="5" />
+    <small>← I like sugary cereals | I want low-sugar cereals →</small>
+
+    <label for="fiber-slider">Fiber Preference</label>
+    <input type="range" id="fiber-slider" min="0" max="10" value="5" />
+    <small>← I don’t care about fiber | I want high fiber →</small>
+
+    <label for="rating-slider">Consumer Reports Rating</label>
+    <input type="range" id="rating-slider" min="0" max="10" value="5" />
+    <small>← Don’t care | Must be well-rated →</small>
+  </div>
+
+  <div id="cereal-result" class="cereal-card"></div>
+</div>
+        </div>
+
+        <!-- D3.js -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="script.js"></script>
+
+</body>
+
+</html>
